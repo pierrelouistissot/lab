@@ -1,0 +1,43 @@
+services:
+
+  attaquant:
+    build:                        
+      context: ./attaquant
+      dockerfile: Dockerfile
+    container_name: lab-attaquant
+    tty: true
+    stdin_open: true
+    networks:
+      - front
+    volumes:
+      - ./workspace:/workspace
+    dns:
+      - 127.0.0.11
+    dns_search:
+      - lab
+
+  machine1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lab-m1
+    networks:
+      - front
+      - internal
+    hostname: target1
+
+  machine2:
+    build:
+      context: ./machine2
+      dockerfile: Dockerfile
+    container_name: lab-m2
+    networks:
+      - internal
+    hostname: target2
+
+networks:
+  front:
+    driver: bridge
+  internal:
+    driver: bridge
+    internal: true
