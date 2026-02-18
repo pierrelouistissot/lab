@@ -684,19 +684,5 @@ Pour adapter le lab :
 
 ---
 
-## 🤝 Contribution
-
-Pour signaler un bug ou proposer une amélioration :
-1. Ouvrir une issue
-2. Décrire le problème avec les logs
-3. Proposer une solution si possible
-
----
-
-## 📄 Licence
-
-Ce projet est distribué sous licence MIT. Voir `LICENSE` pour plus de détails.
-
----
 
 **Bon hack ! 🎉**
